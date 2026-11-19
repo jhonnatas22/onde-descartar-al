@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onde Descartar AL — Pontos de descarte de resíduos em Alagoas</title>
+<meta name="description" content="Encontre onde descartar resíduos corretamente em Alagoas: ecopontos, coleta seletiva, coleta domiciliar e de volumosos, com mapa e guia de resíduos.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♻️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#app">Pular para o conteúdo</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="#/" aria-label="Onde Descartar AL — página inicial"><span aria-hidden="true">♻️</span> Onde Descartar <b>AL</b></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Principal">
+      <a href="#/">Início</a><a href="#/buscar">Buscar descarte</a><a href="#/servicos">Serviços de coleta</a><a href="#/mapa">Mapa de pontos</a>
+      <a href="#/guia">Guia de resíduos</a><a href="#/recolhimento">Recolhimento</a><a href="#/sobre">Sobre</a>
+    </nav>
+    <div class="a11y" role="group" aria-label="Acessibilidade">
+      <button id="fontBtn" aria-pressed="false" title="Aumentar texto">A+</button>
+      <button id="contrastBtn" aria-pressed="false" title="Alto contraste">◐</button>
+    </div>
+    <a class="btn small" href="#/mapa">Encontrar um ponto de descarte</a>
+  </div>
+</header>
+<main id="app" tabindex="-1"></main>
+<div id="live" class="sr" aria-live="polite"></div>
+<footer class="site-footer"><div class="wrap">
+  <p><b>Onde Descartar AL</b> — plataforma de utilidade pública para o descarte correto de resíduos sólidos em Alagoas.</p>
+  <p>Dados de Maceió: Alurb / Prefeitura de Maceió. Mapas © colaboradores do <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>. · <a href="#/admin">Área de gestão</a></p>
+</div></footer>
+<dialog id="dlg" aria-labelledby="dlgTitle"></dialog>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

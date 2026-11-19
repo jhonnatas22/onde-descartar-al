@@ -1,0 +1,24 @@
+# Blueprint do Render — https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: onde-descartar-al
+    runtime: python
+    plan: free                      # veja o README: no plano free o banco SQLite NÃO é persistente
+    buildCommand: echo "Sem dependências para instalar"
+    startCommand: python server.py
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: ODAL_TRUST_PROXY       # usa o IP real do visitante (X-Forwarded-For) no bloqueio de logins
+        value: "1"
+      - key: ODAL_ADMIN_PASSWORD    # senha inicial dos usuários gestor e cooperativa (gerada pelo Render)
+        generateValue: true
+      # --- Para dados persistentes: troque "plan: free" por um plano pago, descomente e crie o disco ---
+      # - key: ODAL_DB
+      #   value: /var/data/ondedescartar.db
+    # disk:
+    #   name: odal-dados
+    #   mountPath: /var/data
+    #   sizeGB: 1
